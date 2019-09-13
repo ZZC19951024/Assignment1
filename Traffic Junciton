@@ -1,0 +1,61 @@
+Traffic Junciton 
+
+Class: CarDrivers
+State: DriverID, Direction
+Behavior: Brake(),Drive()
+
+------------------------------------------------
+
+Class: TrafficLight
+State: TLDirection, LightColor
+Behavior: IsWorking()//check the traffic light is working
+
+------------------------------------------------
+
+Class: CarDirection
+Behavior: IsNToS()//check the car's direction
+          IsWToE()
+
+------------------------------------------------
+Class: TrafficJunction
+Behavior: Start(){
+          CarID Car1, Car2, Car3;
+          LightColor Green, Yellow, Red;
+          TLDriection NToS, WToE;
+          if(!IsWorking){
+             return false;
+          }
+          Car1.Drive();
+          Car2.Drive();
+          Car3.Drive();
+          while(TrafficLight.NToS==Green）{
+               if(car1.IsNToS()){
+               car1.Drive();
+               }
+               else{
+               car1.Brake();
+               }
+               if(car2.IsNToS){
+               car2.Drive();
+               }
+               else{
+               car2.Brake();
+               }
+               if(car3.IsNToS()}{
+               car3.Drive();
+               }
+               else{
+               car3.Brake();
+               }
+          }
+          while(TrafficLight.WToE){
+               if(car1.IsWToE()){car1.Drive();}
+               else{car1.Brake();}
+               if(car2.IsWToE()){car2.Drive();}
+               else{car2.Brake();}
+               if(car3.IsWToE()){car3.Drive();}
+               else{car3.Brake();}
+          }
+          
+          
+}

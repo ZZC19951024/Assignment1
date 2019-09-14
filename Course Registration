@@ -1,0 +1,19 @@
+Design a system for student to enroll courses
+
+Students can
+1. enroll courses
+2. swap courses
+3. drop courses
+4. view my schedule 
+5. check avaliable course
+
+Class Student
+Data: StudentID, Name, Gender, Grade
+Behavior: 
+EnrollClass(CourseID){
+  //assume each student can take maximum of 5 courses 
+  List Schedule = new ArryList();
+  for(int i=0,i<5,i++){
+     Schedule.ad(CourseID);
+  }
+}

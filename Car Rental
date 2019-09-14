@@ -6,16 +6,76 @@ User can
 3.Choose car brand
 2.rent a car
 3.cancel car order
+----------------------------------------------------------------------------------------------------------------------
 
 Class: User
-Data: name, CarType, DriverLicense, PickupTime, ReturnTime
+Data: name, CreditCard, DriverLicense
 Behavior:
 LoginApp{
   App.Login(name);
+  }
+ChooseCarTypeAndBrand{
+     CarTypeAndBrand = App.ChooseCarTypeAndBrand(CarSeat,CardPrice);
+  }
+
+RentCar(){
+  if(License.LicenseAvaliable&&CreditCar.CardAvaliable){
+     RentalDetials = App.RentCar(RentalPrice,PickupDate,ReturnDate);
+  }
+Cancel(RentalID){
+  App.CancelAppointment(RentalID);
+  }
 }
-ChooseCarType{
-  
+
+----------------------------------------------------------------------------------------------------------------------
+
+Class:CarRentalCompany
+Data: CompanyName,RentalPrice,CarSeat,CarPrice,PickupDate,ReturnDate
+Behavior: CheckAvaliable(PickupDate, ReturnDate){//check time avaliavility}
+
+----------------------------------------------------------------------------------------------------------------------
+Class:App
+Data: Status
+Behavior:
+login(userName) {
+	List<String> nameList;
+	foreach(String name in nameList) {
+		if(userName == name)
+    status = true;
 }
-RentCar{
-  if(License.LicenseAvaliable&&CreditCar.CardAvaliable)
+    status = false;
+}
+int ChooseCarTypeAndBrand(CarSeat,CarPrice){
+    if(CardSeat > 5 && CarPrice > 50000){return RentalPrice;}
+    else if(CardSeat < 5 && CarPrice > 50000){return RentalPrice;}
+    else if(CardSeat > 5 && CarPrice < 50000){return RentalPrice;}
+    else {return RentalPrice;}
+}
+RentCar(RentalPrice, PickupDate, ReturnDate){
+    if(CreditCar.CardAvaliable){
+      int price = (ReturnDate-PickupDate)*RentalPrice;
+      Payment.Pay(name,price);
+      return RentalID;
+    }
+}
+Cancel(RentalID){
+      Payment.Refund(RentalID,price);
+}
+
+----------------------------------------------------------------------------------------------------------------------
+Class:CreditCard
+Data: type, bankName, cardNumber, address, securityCode, expireDate
+Behaviour:
+cardAvailable() {
+	Date currentDate = new Date();
+return currentDate.compareTo(expireDate);
+}
+
+----------------------------------------------------------------------------------------------------------------------
+Class:DriverLicense
+Data: LicenseID, DriverName, ExpireDate
+Behaviour:
+LicenseAvailable() {
+	Date currentDate = new Date();
+return currentDate.compareTo(expireDate);
 }

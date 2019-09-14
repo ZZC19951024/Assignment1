@@ -1,0 +1,21 @@
+Design and App for car rental
+
+User can 
+1.Login App
+2.Choose car types
+3.Choose car brand
+2.rent a car
+3.cancel car order
+
+Class: User
+Data: name, CarType, DriverLicense, PickupTime, ReturnTime
+Behavior:
+LoginApp{
+  App.Login(name);
+}
+ChooseCarType{
+  
+}
+RentCar{
+  if(License.LicenseAvaliable&&CreditCar.CardAvaliable)
+}

@@ -60,12 +60,10 @@ VendingType(FoodType){
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Class: CreditCardDetails
-State: name, cardNumber, cardType, expiryDate
-Behaviour:  isCardExpired() {
-        Date today = new Date();
-        if(today.compareTo(expiryDate) == 1)
-             return true;
-        else return false;
-    }
-
+Class: CreditCard
+Data: type, bankName, cardNumber, address, securityCode, expireDate
+Behaviour:
+cardAvailable() {
+	Date currentDate = new Date();
+return currentDate.compareTo(expireDate);
+}

@@ -63,4 +63,10 @@ CapacityCheck(Object[] arry){
 }
 ------------------------------------------------------------------------------------------------------------------------------
 
-
+Class:CreditCard
+Data: type, bankName, cardNumber, address, securityCode, expireDate
+Behaviour:
+cardAvailable() {
+	Date currentDate = new Date();
+return currentDate.compareTo(expireDate);
+}

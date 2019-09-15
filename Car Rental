@@ -79,3 +79,4 @@ LicenseAvailable() {
 	Date currentDate = new Date();
 return currentDate.compareTo(expireDate);
 }
+

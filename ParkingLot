@@ -1,0 +1,66 @@
+Create a Parkinglot system
+
+Drivers can 
+1.Choose Parking time 
+2.Pay for the parking 
+3.Reserve Parking place
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Class: Driver
+Data: DriverID, CreditCard, CarID
+Behavior:
+ChooseParkingTime(int time){
+    int time=0;
+    ParkingLot.Time(time);
+}
+MakePayment(CarID){
+   if(CreditCard. CardAvaliable){
+    ParkingLot.Pay(CarID);
+    }
+}
+ReservePlace(Date,StartTime,EndTime){
+   if(DateAvaliable && StartTimeAvaliable && EndTimeAvaliable){
+      ParkingLot.AddReserve(Date, StartTime, EndTime);
+   }
+}
+CancleReservation(ReserveID){
+  ParkingLot. Cancle(ReserveID);
+}
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Class: ParkingLot
+Data: Price, time
+Behavior:
+Time(time){
+  if(time<2h)int ShortPrice = Price;
+  else int LongPrice = Price;
+}
+Pay(CarID){
+  int price = time * price;
+  PaymentService. Pay(CarID, price);
+}
+AddReserve(CarID){
+  if(!CapacityCheck) return false;
+  List reservation = new ArryList();
+  for(int i=0, i<reservation.size(),i++){
+     reservation.add(CarID);
+     return ReserveID;
+  }
+}
+Cancle(CarID){
+  reservation.remove(CarID);
+  PaymentService.Refund(ReserveID);
+}
+DateAvaliable(Date){//check date avaliability}
+
+CapacityCheck(Object[] arry){
+    for(Object CarID: arry){
+      if(CarID == NULL) return ture;
+      else return false;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------
+
+

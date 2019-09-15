@@ -6,14 +6,57 @@ Students can
 3. drop courses
 4. view my schedule 
 5. check avaliable course
+6. SendEmail
+
+---------------------------------------------------------------------
 
 Class Student
 Data: StudentID, Name, Gender, Grade
 Behavior: 
 EnrollClass(CourseID){
-  //assume each student can take maximum of 5 courses 
   List Schedule = new ArryList();
-  for(int i=0,i<5,i++){
-     Schedule.ad(CourseID);
+  if(School.CourseAvalibility){
+  for(int i=0, i<Schedule.size(), i++){
+      Schedule.add(CourseID);
+      }
+    }
+  }
+SwapClass(OldCourseID, NewCourseID){
+  int index = Schedule.indexof(OldCourseID);
+  Schedule.set(index,NewCourseID);
+}
+DropClass(CourseID){
+  int index = Schedule.indexof(CourseID);
+  Schedule.remove(CourseID);
+}
+ViewSchedule(){
+  for(int i=0;i<Schedule.size();i++){
+    System.out.println(list.get(i));
   }
 }
+Boolean CheckAvaliability(CourseID){
+  if(School.CourseAbility) return ture;
+  else return false;
+}
+
+SendEmail(CourseID){
+  Email.send(CourseID.TeacherEmail);
+}
+---------------------------------------------------------------------
+
+Class: School
+Data: SchoolName, CourseID, RemainSeat, CourseTime, CourseCredits
+Behavior: 
+CourseAvaliability(CourseID, List<int> Schedule){
+   if (CourseID.RemainSeat == 0){return false;}
+   for(int i=0,i<Schedule.size(),i++){
+      if (Schedule[i].CourseTime == CourseID.CourseTime) return false;
+   }
+   return true;
+}
+
+---------------------------------------------------------------------
+
+Class: Teacher
+Data: TeacherName, TeacherEmail, CourseID
+Behavior:

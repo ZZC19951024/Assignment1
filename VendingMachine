@@ -1,0 +1,71 @@
+Create a vending machine system
+
+User can 
+1. use diffierent kind of coins or card
+2. choose sanke or drinks
+3. buy snake or drinks
+
+----------------------------------------------------------------------------------------------------------------------
+
+Class: User
+Data: Name, CreditCard,MoneyType
+Behavior:
+MakePayment(MoneyType,CreditCard){
+  if(MoneyType != NULL && CreditCard == NULL){
+    Machine.Pay(MoneyType);
+  }
+  else if(MoneyType == NULL && CreditCard != NULL){
+         if(CreditCard.CardAvaliable){
+            Machine.pay(CreditCard);
+         }
+  }
+  else return false;
+}
+
+ChooseType(Type){
+  Machine.VendingType(Type);
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+Class: Mahcine
+Data: PaymentType, FoodType, Price
+Behavior:
+Pay(PaymentType){
+   int Price = ItemPrice
+   if (PaymentType == Creditcard){
+      PaymentSerivce.Pay(ItemPrice);
+   }
+   else if(PaymentType == MoneyType){
+         CoinType Penny, Dime, Nickel, Quarter;
+         switch(CoinType){
+         case Penny: int NumberNeed = ItemPrice/0.01; return NumberNeed;
+         break;
+         case Dime: int NumberNeed = ItemPrice/0.1; return NumberNeed;
+         break;
+         Case Nickel: int NumberNeed = ItemPrice/0.05; return NumberNeed;
+         break;
+         case Quarter: int NumberNeed = ItemPrice/0.25; return NumberNeed;
+         break;
+         defualt: break;
+         }
+         PaymentService.Pay(NumberNeed);
+   }
+   else return false;
+}
+VendingType(FoodType){
+      if(FoodType == Snake){Price = SnakePrice;}
+      else if(FoodType == Drink){Price = DrinkPrice;}
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+Class: CreditCardDetails
+State: name, cardNumber, cardType, expiryDate
+Behaviour:  isCardExpired() {
+        Date today = new Date();
+        if(today.compareTo(expiryDate) == 1)
+             return true;
+        else return false;
+    }
+

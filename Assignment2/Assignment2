@@ -138,7 +138,7 @@ public class Assignment2 {
      */
     public static void tripleSalary(Employee employee) {
         // @TODO
-    	employee.setSalary(employee.getSalary()*3);
+    	employee.RaiseSalary(300);
     }
     
     
@@ -173,8 +173,9 @@ public class Assignment2 {
     	//tripleSalary(employee);
     	//isContainDigit(employee1);
     	//reverseFirstName(employee1);
-    	String[] employees = new String[]{"1,John,24,7500", "2,Hail,28,7899.90"};
-    	createEmployees(employees);
-    	//System.out.println(createEmployees(employees));
+    	//String[] employees = new String[]{"1,John,24,7500", "2,Hail,28,7899.90"};
+    	//createEmployees(employees);
+    	tripleSalary(employee1);
+    	System.out.println(employee1.getSalary());
     }
 }

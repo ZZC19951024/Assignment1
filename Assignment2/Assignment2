@@ -179,3 +179,4 @@ public class Assignment2 {
     	System.out.println(employee1.getSalary());
     }
 }
+

@@ -58,4 +58,11 @@ class IndexOutOfBoundException extends Exception{
 		 return "Error Message: Index: " + index + ", but Lower bound: " + this.lowerBound + ", Upper Bound: "+ this.upperBound;
 	 }
 }
+//Extra Credits
+/* The final out put of this pice of code should be 6. At the begainning, the main function creates a B object called b and create
+a list of that object, containning 1 ,2 ,3. Then the main function runs the addAll function of the B object. Due to this statement "addCount += c.size();",
+the addcount is 3 now because the size of that list is 3. Then the b.addAll function calls the parent A.addAll function. Inside of A.addAll 
+function, the add function, which has been overriden by child b object, executes 3 times, so that makes the addCount adds 3 times.
+So the getaddCount will fianlly return 6. And the getI will return 0 due to the i varivalble in the parent A class, and the does not
+overriden by the child B class. So the final output is 6 + 0 = 0*/
 	

@@ -65,4 +65,4 @@ the addcount is 3 now because the size of that list is 3. Then the b.addAll func
 function, the add function, which has been overriden by child b object, executes 3 times, so that makes the addCount adds 3 times.
 So the getaddCount will fianlly return 6. And the getI will return 0 due to the i varivalble in the parent A class, and the does not
 overriden by the child B class. So the final output is 6 + 0 = 0*/
-	
+
